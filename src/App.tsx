@@ -1,5 +1,10 @@
-import Home from './Home';    
+import Home from './Home';      
+import { UiProvider } from './store/uiStore';  
 
 export default function App() {
-  return <Home />;              
+  return (
+    <UiProvider>                 
+      <Home />
+    </UiProvider>
+  );
 }
