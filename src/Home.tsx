@@ -5,7 +5,7 @@ import { useUi } from '@/store/uiStore';
 import clsx from 'clsx';
 
 export default function Home() {
-  const { cards, status } = useCards();
+  const { cards, status, error } = useCards();
   const { toggleTheme, theme, setSelectedId } = useUi();
 
   // highlight the middle card once cards are fetched
@@ -18,7 +18,12 @@ export default function Home() {
 
   /* ----- data states ----- */
   if (status === 'loading') return <p className="text-center mt-10">Loading…</p>;
-  if (status === 'error')   return <p className="text-center mt-10">Failed to load cards.</p>;
+  if (status === 'error')
+    return (
+      <p className="text-center mt-10">
+        {error ?? 'Failed to load cards.'}
+      </p>
+    );
 
   return (
     <>
