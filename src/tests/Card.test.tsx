@@ -13,6 +13,7 @@ test('border switches on click', async () => {
     </UiProvider>,
   );
   const btn = screen.getByRole('button', { name: /select/i });
+  expect(btn.closest('article')).not.toHaveClass('border-blue-500');
   await userEvent.click(btn);
   expect(btn.closest('article')).toHaveClass('border-blue-500');
 });
