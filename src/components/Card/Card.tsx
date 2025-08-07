@@ -1,5 +1,5 @@
 import type { CardDto } from '@/types';
-import { useUi } from '@/store/uiStore';
+import { useUi } from '@/context/UiContext';
 import CardImage from './CardImage';
 import CardBody from './CardBody';
 import Button from '../Button';
