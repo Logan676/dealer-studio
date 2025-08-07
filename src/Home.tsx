@@ -3,6 +3,7 @@ import { useCards } from '@/hooks/useCards';
 import Card from '@/components/Card';
 import { useUi } from '@/store/uiStore';
 import clsx from 'clsx';
+import bg from '@/assets/images/bg.jpg';
 
 export default function Home() {
   const { cards, status } = useCards();
@@ -28,7 +29,7 @@ export default function Home() {
       >
         {/* background image */}
         <img
-          src="/bg.jpg"
+          src={bg}
           alt="Blue Ford Raptor kicking dust"
           className="absolute inset-0 h-full w-full object-cover"
         />
