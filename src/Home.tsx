@@ -24,21 +24,23 @@ export default function Home() {
           className="absolute inset-0 h-full w-full object-cover"
         />
         {/* dark overlay for readability */}
-        <div className="absolute inset-0 bg-black/45"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
 
         {/* content */}
         <div className="relative z-10 max-w-3xl text-white">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            Welcome to G Automotive
-          </h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Welcome to G Automotive
+            </h1>
           <p className="mb-8">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
             nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-          <button className="px-8 py-3 bg-blue-600 rounded-md font-medium hover:bg-blue-700">
-            Contact Us
-          </button>
+          <button
+            className="mx-auto px-10 py-4 text-lg font-bold text-white bg-blue-600 rounded-full hover:bg-blue-700"
+          >
+              Contact Us
+            </button>
         </div>
       </section>
 
@@ -49,18 +51,18 @@ export default function Home() {
           onClick={toggleTheme}
           className="mb-6 px-4 py-2 border rounded-md text-sm"
         >
-          Toggle {theme === 'light' ? 'Dark' : 'Light'} Mode
-        </button>
+            Toggle {theme === 'light' ? 'Dark' : 'Light'} Mode
+          </button>
 
         <div
           className={clsx(
-            'grid gap-8 w-full max-w-6xl',
+            'grid gap-8 mt-8 w-full max-w-6xl',
             // 1‑col: mobile (<768)  |  2‑col: md (≥768)  |  3‑col: lg (≥1024)
             'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
           )}
         >
-          {cards.slice(0, 3).map((c, i) => (
-            <Card key={c.id} data={c} index={i} />
+          {cards.slice(0, 3).map((c) => (
+            <Card key={c.id} data={c} />
           ))}
         </div>
       </section>

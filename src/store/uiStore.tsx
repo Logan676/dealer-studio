@@ -28,4 +28,5 @@ export const UiProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const useUi = () => useContext(UiCtx);
+  // eslint-disable-next-line react-refresh/only-export-components
+  export const useUi = () => useContext(UiCtx);

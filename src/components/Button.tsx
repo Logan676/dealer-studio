@@ -7,8 +7,7 @@ export default function Button({
 }) {
   return (
     <button
-      className="m-4 py-2 rounded-md w-[90%] self-center bg-blue-600 
-                 text-white font-medium hover:bg-blue-700 transition-colors"
+      className="w-full px-4 py-2 rounded-lg bg-blue-600 text-white font-bold hover:bg-blue-700 transition-colors"
       onClick={onClick}
     >
       {label}
