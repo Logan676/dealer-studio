@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useCards } from '@/hooks/useCards';
 import Card from '@/components/Card';
-import { useUi } from '@/store/uiStore';
+import { useUi } from '@/context/UiContext';
 import clsx from 'clsx';
 
 export default function Home() {

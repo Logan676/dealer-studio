@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { UiProvider } from '@/store/uiStore';
+import { UiProvider } from '@/context/UiContext';
 import Card from '@/components/Card';
 import { CardDto } from '@/types';
 

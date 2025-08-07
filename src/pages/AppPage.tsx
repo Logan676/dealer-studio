@@ -1,5 +1,5 @@
 import Home from './HomePage';
-import { UiProvider } from '../store/uiStore';
+import { UiProvider } from '../context/UiContext';
 
 export default function App() {
   return (
