@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "heading": "Heading 1",
+    "body": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+      "Ut enim ad minim veniam."
+    ],
+    "img": "/banner.jpg",
+    "cta": "Button 1"
+  }
+]
