@@ -18,7 +18,7 @@ export default function Card({ data, index }: { data: CardDto; index: number }) 
       )}
     >
       <CardImage src={data.img} heading={data.heading} />
-      <CardBody heading={data.heading} paragraphs={data.body} />
+      <CardBody heading={data.heading} sub={data.sub} paragraphs={data.body} />
       <Button onClick={() => setSelectedId(data.id)} label={data.cta} />
     </article>
   );

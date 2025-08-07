@@ -1,36 +1,50 @@
 import { useCards } from '@/hooks/useCards';
 import Card from '@/components/Card';
 import { useUi } from '@/store/uiStore';
+import clsx from 'clsx';
 
 export default function Home() {
   const { cards, status } = useCards();
   const { toggleTheme, theme } = useUi();
 
+  /* ----- data states ----- */
   if (status === 'loading') return <p className="text-center mt-10">Loading…</p>;
   if (status === 'error')   return <p className="text-center mt-10">Failed to load cards.</p>;
 
   return (
     <>
-      {/* Hero */}
+      {/* ─────────────────────────────  HERO  ───────────────────────────── */}
       <section
-        className="min-h-[60vh] text-white flex flex-col items-center justify-center
-                   bg-cover bg-center"
-        style={{ backgroundImage: 'url(/bg.jpg)' }}
+        className="relative min-h-[70vh] flex flex-col items-center justify-center text-center px-4"
       >
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
-          Welcome to G Automotive
-        </h1>
-        <p className="max-w-2xl text-center mb-6 px-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…
-        </p>
-        <button className="px-6 py-3 bg-blue-600 rounded-md hover:bg-blue-700">
-          Contact Us
-        </button>
+        {/* background image */}
+        <img
+          src="/bg.jpg"
+          alt="Blue Ford Raptor kicking dust"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        {/* dark overlay for readability */}
+        <div className="absolute inset-0 bg-black/45"></div>
+
+        {/* content */}
+        <div className="relative z-10 max-w-3xl text-white">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            Welcome to G Automotive
+          </h1>
+          <p className="mb-8">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          <button className="px-8 py-3 bg-blue-600 rounded-md font-medium hover:bg-blue-700">
+            Contact Us
+          </button>
+        </div>
       </section>
 
-      {/* Cards */}
+      {/* ──────────────────────────  CARD GRID  ────────────────────────── */}
       <section className="py-16 px-4 flex flex-col items-center">
-        {/* theme switch */}
+        {/* light / dark switch – optional */}
         <button
           onClick={toggleTheme}
           className="mb-6 px-4 py-2 border rounded-md text-sm"
@@ -39,10 +53,13 @@ export default function Home() {
         </button>
 
         <div
-          className="grid gap-8 w-full max-w-6xl 
-                     grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+          className={clsx(
+            'grid gap-8 w-full max-w-6xl',
+            // 1‑col: mobile (<768)  |  2‑col: md (≥768)  |  3‑col: lg (≥1024)
+            'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+          )}
         >
-          {cards.map((c, i) => (
+          {cards.slice(0, 3).map((c, i) => (
             <Card key={c.id} data={c} index={i} />
           ))}
         </div>
