@@ -28,33 +28,33 @@ export default function Home() {
 
         {/* content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight drop-shadow-lg text-white">
-            Welcome to G Automotive
-          </h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight drop-shadow-lg text-white">
+              Welcome to G Automotive
+            </h1>
           <p className="mb-8 text-lg drop-shadow-md text-white max-w-2xl mx-auto">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
             nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-          <button className="px-10 py-4 bg-blue-600 rounded-full font-bold text-lg hover:bg-blue-700 transition-colors shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300 w-full max-w-xs mx-auto">
-            Contact Us
-          </button>
+            <button className="px-10 py-4 bg-blue-600 rounded-full font-bold text-lg hover:bg-blue-700 transition-colors shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300 w-full max-w-xs mx-auto">
+              Contact Us
+            </button>
         </div>
       </section>
 
       {/* ──────────────────────────  CARD GRID  ────────────────────────── */}
-      <section className="py-16 px-2 sm:px-4 flex flex-col items-center w-full">
+      <section className="py-16 px-2 sm:px-4 flex flex-col items-center w-full max-w-6xl mx-auto">
         {/* light / dark switch – optional */}
         <button
           onClick={toggleTheme}
           className="mb-6 px-4 py-2 border rounded-md text-sm"
         >
-          Toggle {theme === 'light' ? 'Dark' : 'Light'} Mode
+          Toggle {theme === 'light' ? 'Dark' : 'Light'} Mode
         </button>
 
         <div
           className={clsx(
-            'grid gap-8 w-full max-w-6xl',
+            'grid gap-8 w-full',
             // 1‑col: mobile (<768)  |  2‑col: md (≥768)  |  3‑col: lg (≥1024)
             'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
             'px-1 sm:px-0'
