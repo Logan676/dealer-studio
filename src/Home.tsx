@@ -47,7 +47,7 @@ export default function Home() {
         {/* light / dark switch – optional */}
         <button
           onClick={toggleTheme}
-          className="mb-6 px-4 py-2 border rounded-md text-sm"
+          className="mb-6 px-4 py-2 bg-blue-600 text-white border border-blue-600 rounded-md text-sm shadow-md hover:bg-blue-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           Toggle {theme === 'light' ? 'Dark' : 'Light'} Mode
         </button>
@@ -55,6 +55,7 @@ export default function Home() {
         <div
           className={clsx(
             'grid gap-8 w-full justify-items-center',
+
             // 1‑col: mobile (<768)  |  2‑col: md (≥768)  |  3‑col: lg (≥1024)
             'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
             'px-1 sm:px-0'
