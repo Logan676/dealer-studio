@@ -45,7 +45,7 @@ export default function Home() {
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
             nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-            <button className="px-10 py-4 bg-blue-600 rounded-full font-bold text-lg hover:bg-blue-700 transition-colors shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300 w-full max-w-xs mx-auto">
+            <button className="px-10 py-4 bg-blue-600 text-white rounded-full font-bold text-lg hover:bg-blue-700 transition-colors shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300 w-full max-w-xs mx-auto">
               Contact Us
             </button>
         </div>
