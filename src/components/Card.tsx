@@ -16,7 +16,7 @@ export default function Card({ data, className = '' }: { data: CardDto, classNam
         isSelected
           ? 'border-4 border-blue-500 shadow-xl scale-105'
           : 'border border-gray-200 dark:border-gray-700 hover:border-blue-400 hover:shadow-xl',
-        'max-w-sm w-full mx-auto',
+        'max-w-sm mx-auto',
         'mb-2',
         'overflow-hidden',
         className

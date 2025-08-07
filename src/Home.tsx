@@ -54,7 +54,7 @@ export default function Home() {
 
         <div
           className={clsx(
-            'grid gap-8 w-full',
+            'grid gap-8 justify-items-center',
             // 1‑col: mobile (<768)  |  2‑col: md (≥768)  |  3‑col: lg (≥1024)
             'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
             'px-1 sm:px-0'
