@@ -9,10 +9,11 @@ const stub: CardDto = { id: 99, heading: 'X', body: ['Y'], img: 'z', cta: 'Selec
 test('border switches on click', async () => {
   render(
     <UiProvider>
-      <Card data={stub} index={0} />
+      <Card data={stub} />
     </UiProvider>,
   );
   const btn = screen.getByRole('button', { name: /select/i });
+  expect(btn.closest('article')).not.toHaveClass('border-blue-500');
   await userEvent.click(btn);
   expect(btn.closest('article')).toHaveClass('border-blue-500');
 });

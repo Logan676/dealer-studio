@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useCards } from '@/hooks/useCards';
 import Card from '@/components/Card';
 import { useUi } from '@/store/uiStore';
@@ -5,7 +6,15 @@ import clsx from 'clsx';
 
 export default function Home() {
   const { cards, status } = useCards();
-  const { toggleTheme, theme } = useUi();
+  const { toggleTheme, theme, setSelectedId } = useUi();
+
+  // highlight the middle card once cards are fetched
+  useEffect(() => {
+    if (cards.length) {
+      const middle = cards[Math.floor(cards.length / 2)];
+      setSelectedId(middle.id);
+    }
+  }, [cards, setSelectedId]);
 
   /* ----- data states ----- */
   if (status === 'loading') return <p className="text-center mt-10">Loading…</p>;

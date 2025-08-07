@@ -9,7 +9,8 @@ interface UiState {
 const UiCtx = createContext<UiState>(null!);
 
 export const UiProvider = ({ children }: { children: ReactNode }) => {
-  const [selectedId, setSelectedId] = useState<number>(2); // middle card default
+  // default will be set to the middle card once data loads
+  const [selectedId, setSelectedId] = useState<number>(0);
   const [theme, setTheme] = useState<'light' | 'dark'>(
     localStorage.theme === 'dark' ? 'dark' : 'light',
   );
