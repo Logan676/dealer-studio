@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { CardDto } from '../types';
+import type { CardDto } from '@/types';
 
 export const useCards = () => {
   const [cards, setCards] = useState<CardDto[]>([]);

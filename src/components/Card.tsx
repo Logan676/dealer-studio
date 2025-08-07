@@ -1,4 +1,4 @@
-import { CardDto } from '@/types';
+import type { CardDto } from '@/types';
 import { useUi } from '@/store/uiStore';
 import CardImage from './CardImage';
 import CardBody from './CardBody';
