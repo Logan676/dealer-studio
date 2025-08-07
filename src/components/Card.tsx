@@ -5,21 +5,27 @@ import CardBody from './CardBody';
 import Button from './Button';
 import clsx from 'clsx';
 
-export default function Card({ data, index }: { data: CardDto; index: number }) {
+export default function Card({ data }: { data: CardDto }) {
   const { selectedId, setSelectedId } = useUi();
   const isSelected = selectedId === data.id;
 
   return (
     <article
       className={clsx(
-        'flex flex-col rounded-lg shadow-lg transition-[border] duration-300',
-        isSelected ? 'border-4 border-blue-500' : 'border border-gray-200 dark:border-gray-700',
-        'max-w-sm w-full',
+        'flex flex-col rounded-2xl shadow-lg transition-all duration-300 bg-white dark:bg-gray-900',
+        isSelected
+          ? 'border-4 border-blue-500 shadow-xl scale-105'
+          : 'border border-gray-200 dark:border-gray-700 hover:border-blue-400 hover:shadow-xl',
+        'max-w-sm w-full mx-auto',
+        'mb-2',
+        'overflow-hidden'
       )}
     >
       <CardImage src={data.img} heading={data.heading} />
-      <CardBody heading={data.heading} sub={data.sub} paragraphs={data.body} />
-      <Button onClick={() => setSelectedId(data.id)} label={data.cta} />
+      <CardBody heading={data.heading} paragraphs={data.body} />
+      <div className="px-4 pb-4 mt-auto">
+        <Button onClick={() => setSelectedId(data.id)} label={data.cta} />
+      </div>
     </article>
   );
 }
