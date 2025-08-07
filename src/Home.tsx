@@ -60,8 +60,8 @@ export default function Home() {
             'px-1 sm:px-0'
           )}
         >
-          {cards.slice(0, 3).map((c) => (
-            <Card key={c.id} data={c} />
+          {cards.slice(0, 3).map((c, i) => (
+            <Card key={c.id} data={c} className={i === 2 ? 'md:col-span-2 md:mx-auto' : ''} />
           ))}
         </div>
       </section>

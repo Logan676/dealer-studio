@@ -5,7 +5,7 @@ import CardBody from './CardBody';
 import Button from './Button';
 import clsx from 'clsx';
 
-export default function Card({ data }: { data: CardDto }) {
+export default function Card({ data, className = '' }: { data: CardDto, className?: string }) {
   const { selectedId, setSelectedId } = useUi();
   const isSelected = selectedId === data.id;
 
@@ -18,7 +18,8 @@ export default function Card({ data }: { data: CardDto }) {
           : 'border border-gray-200 dark:border-gray-700 hover:border-blue-400 hover:shadow-xl',
         'max-w-sm w-full mx-auto',
         'mb-2',
-        'overflow-hidden'
+        'overflow-hidden',
+        className
       )}
     >
       <CardImage src={data.img} heading={data.heading} />
