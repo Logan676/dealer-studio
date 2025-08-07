@@ -2,7 +2,7 @@ import type { CardDto } from '@/types';
 import { useUi } from '@/store/uiStore';
 import CardImage from './CardImage';
 import CardBody from './CardBody';
-import Button from './Button';
+import Button from '../Button';
 import clsx from 'clsx';
 
 export default function Card({ data, className = '' }: { data: CardDto, className?: string }) {
