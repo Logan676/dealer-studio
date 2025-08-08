@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
-import { vi } from 'vitest';
+import { vi, beforeAll, afterEach, afterAll } from 'vitest';
+import { server } from './mocks/server';
 
 // Vitest's node runtime lacks `window.matchMedia`, which some components
 // rely on. Define a minimal stub so tests can execute without throwing.
@@ -24,3 +25,7 @@ if (!window.matchMedia) {
     })),
   });
 }
+
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
