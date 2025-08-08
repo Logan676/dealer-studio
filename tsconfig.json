@@ -1,6 +1,15 @@
 {
   "compilerOptions": {
-    "types": ["vitest/globals", "node"]  
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": [
+      "vitest/globals",
+      "node"
+    ]
   },
   "files": [],
   "references": [
