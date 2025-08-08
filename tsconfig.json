@@ -8,7 +8,7 @@
     { "path": "./tsconfig.node.json" }
   ],
   "exclude": [
-    "src/tests",          // Vitest / RTL files
+    "test",          // Vitest / RTL files
     "**/*.test.tsx",      // safety net
     "**/*.test.ts"        // "
   ]
