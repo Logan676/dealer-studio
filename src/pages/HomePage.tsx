@@ -5,23 +5,24 @@ import { useUi } from '@/context/UiContext';
 import clsx from 'clsx';
 
 export default function Home() {
-  const { cards, status, error } = useCards();
+  const { data, status, error } = useCards();
   const { toggleTheme, theme, setSelectedId } = useUi();
 
   // highlight the middle card once cards are fetched
   useEffect(() => {
-    if (cards.length) {
-      const middle = cards[Math.floor(cards.length / 2)];
+    if (data?.length) {
+      const middle = data[Math.floor(data.length / 2)];
       setSelectedId(middle.id);
     }
-  }, [cards, setSelectedId]);
+  }, [data, setSelectedId]);
 
   /* ----- data states ----- */
-  if (status === 'loading') return <p className="text-center mt-10">Loading…</p>;
+  if (status === 'pending')
+    return <p className="text-center mt-10">Loading…</p>;
   if (status === 'error')
     return (
       <p className="text-center mt-10">
-        {error ?? 'Failed to load cards.'}
+        {error instanceof Error ? error.message : 'Failed to load cards.'}
       </p>
     );
 
@@ -75,7 +76,7 @@ export default function Home() {
             'px-1 sm:px-0'
           )}
         >
-          {cards.slice(0, 3).map((c, i) => (
+          {data?.slice(0, 3).map((c, i) => (
             <Card
               key={c.id}
               data={c}
