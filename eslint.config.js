@@ -21,7 +21,7 @@ export default tseslint.config([
     },
   },
   {
-    files: ['test/**/*.{ts,tsx}'],
+    files: ['tests/**/*.{ts,tsx}'],
     languageOptions: {
       globals: { ...globals.browser, ...globals.vitest },
     },
