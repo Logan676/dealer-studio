@@ -18,7 +18,7 @@
     { "path": "./tsconfig.test.json" }
   ],
   "exclude": [
-    "test",          // Vitest / RTL files
+    "tests",          // Vitest / RTL files
     "**/*.test.tsx",      // safety net
     "**/*.test.ts"        // "
   ]
