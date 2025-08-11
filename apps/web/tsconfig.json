@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": [
+      "vitest/globals",
+      "node"
+    ]
+  },
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" },
+    { "path": "./tsconfig.test.json" }
+  ],
+  "exclude": [
+    "tests",          // Vitest / RTL files
+    "**/*.test.tsx",      // safety net
+    "**/*.test.ts"        // "
+  ]
+}
